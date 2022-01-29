@@ -48,9 +48,9 @@ CONFIG = {
     "mode": "list",
     "rowlimit": -1,
     "marqueeFields": ["title", "text"],
-    "marqueeSpeed": 20,
+    "marqueeSpeed": 8,
     "marqueeSpeedReturn": 400,
-    "marqueeDelay": 40,
+    "marqueeDelay": 5,
     "marqueeDelayReturn": 120,
     "refresh": 120,  # twitter & RSS pooling interval (seconds)
     "categories": (),
