@@ -15,7 +15,7 @@ from .common import p
 from .config import twitter_config, TIMEZONE
 
 
-def do(page=2):
+def do(page=4):
     flag = False
     consumer_key, consumer_secret = "", ""
     access_token, access_secet = "", ""
