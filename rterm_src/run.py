@@ -33,15 +33,19 @@ KEY = {
     "h": [ord("h"), ord("H")],
     "?": ord("?"),
     "r": [ord("r"), ord("R")],
-    "s": [ord("s"), ord("S")],
-    "w": [ord("w"), ord("W")],
-    "j": [ord("j"), ord("J")],
-    "k": [ord("k"), ord("K")],
+    "s": ord("s"),
+    "w": ord("w"),
+    "j": ord("j"),
+    "k": ord("k"),
+    "S": ord("S"),
+    "W": ord("W"),
+    "J": ord("J"),
+    "K": ord("K"),
     "o": [ord("o"), ord("O")],
     "q": [ord("q"), ord("Q")],
 }
 
-KEYLIST = {"arrow": [KEY["up"], KEY["down"], KEY["shiftUp"], KEY["shiftDown"], KEY["esc"]] + KEY["s"] + KEY["w"] + KEY["j"] + KEY["k"], "number": range(48, 58)}
+KEYLIST = {"arrow": [KEY["up"], KEY["down"], KEY["shiftUp"], KEY["shiftDown"], KEY["esc"], KEY["s"], KEY["w"], KEY["j"], KEY["k"], KEY["S"], KEY["W"], KEY["J"], KEY["K"]], "number": range(48, 58)}
 
 CONFIG = {
     "color": 16,
@@ -565,7 +569,7 @@ def layout(screen):
                 resetListArrowKey()
                 CURRENT["line"][CURRENT["category"]] = -1
 
-            elif keyCode == KEY["down"] or keyCode in KEY["j"] + KEY["s"]:
+            elif keyCode in [KEY["down"], KEY["j"], KEY["s"]]:
                 resetListArrowKey()
                 CURRENT["line"][CURRENT["category"]] += 1
                 if CURRENT["line"][CURRENT["category"]] >= CONFIG["rowlimit"]:
@@ -573,7 +577,7 @@ def layout(screen):
                     drawEntries(force=True)
                     screen.refresh()
 
-            elif keyCode == KEY["up"] or keyCode in KEY["k"] + KEY["w"]:
+            elif keyCode in [KEY["up"], KEY["k"], KEY["w"]]:
                 resetListArrowKey()
                 CURRENT["line"][CURRENT["category"]] -= 1
                 if CURRENT["line"][CURRENT["category"]] < 0:
@@ -581,7 +585,7 @@ def layout(screen):
                     drawEntries(force=True)
                     screen.refresh()
 
-            elif keyCode == KEY["shiftUp"]:
+            elif keyCode in [KEY["shiftUp"], KEY["W"], KEY["K"]]:
                 resetListArrowKey()
                 CURRENT["line"][CURRENT["category"]] -= 10
                 if CURRENT["line"][CURRENT["category"]] < 0:
@@ -589,7 +593,7 @@ def layout(screen):
                     drawEntries(force=True)
                     screen.refresh()
 
-            elif keyCode == KEY["shiftDown"]:
+            elif keyCode in [KEY["shiftDown"], KEY["S"], KEY["J"]]:
                 CURRENT["shift"] = 0
                 CURRENT["oline"] = CURRENT["line"][CURRENT["category"]]
                 CURRENT["line"][CURRENT["category"]] += 10
