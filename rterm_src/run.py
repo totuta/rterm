@@ -388,7 +388,7 @@ def layout(screen):
         if CURRENT["page"][CURRENT["category"]] == 0:
             CURRENT["line"][CURRENT["category"]] = 0
             alert(screen, "top of the list")
-            time.sleep(0.5)
+            time.sleep(0.1)
             drawCategories()
         else:
             CURRENT["line"][CURRENT["category"]] = CONFIG["rowlimit"] - 1
@@ -399,7 +399,7 @@ def layout(screen):
         if len(data[CURRENT["category"]]["entries"]) - (CURRENT["page"][CURRENT["category"]] + 1) * (screen.height - 2) < CONFIG["rowlimit"]:
             CURRENT["line"][CURRENT["category"]] = CONFIG["rowlimit"] - 1
             alert(screen, "end of the list")
-            time.sleep(0.5)
+            time.sleep(0.1)
             drawCategories()
         else:
             CURRENT["line"][CURRENT["category"]] = 0
