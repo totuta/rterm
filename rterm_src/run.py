@@ -441,13 +441,8 @@ def layout(screen):
         if CURRENT["page"][CURRENT["category"]] == 0:
             CURRENT["line"][CURRENT["category"]] = 0
             alert(screen, "top of the list")
-<<<<<<< HEAD
             time.sleep(0.1)
-            drawCategories()
-=======
-            time.sleep(0.5)
             draw_categories()
->>>>>>> 9931cbd4cceb05cd7a11f20a8360f7e33227f3af
         else:
             CURRENT["line"][CURRENT["category"]] = CONFIG["rowlimit"] - 1
             CURRENT["page"][CURRENT["category"]] -= 1
@@ -461,13 +456,8 @@ def layout(screen):
         ):
             CURRENT["line"][CURRENT["category"]] = CONFIG["rowlimit"] - 1
             alert(screen, "end of the list")
-<<<<<<< HEAD
             time.sleep(0.1)
-            drawCategories()
-=======
-            time.sleep(0.5)
             draw_categories()
->>>>>>> 9931cbd4cceb05cd7a11f20a8360f7e33227f3af
         else:
             CURRENT["line"][CURRENT["category"]] = 0
             CURRENT["page"][CURRENT["category"]] += 1
@@ -657,50 +647,31 @@ def layout(screen):
                 reset_list_arrow_key()
                 CURRENT["line"][CURRENT["category"]] = -1
 
-<<<<<<< HEAD
-            elif keyCode in [KEY["down"], KEY["j"], KEY["s"]]:
-                resetListArrowKey()
-=======
-            elif keycode == KEY["down"] or keycode in KEY["j"] + KEY["s"]:
+            elif keycode in [KEY["down"], KEY["j"], KEY["s"]]:
                 reset_list_arrow_key()
->>>>>>> 9931cbd4cceb05cd7a11f20a8360f7e33227f3af
                 CURRENT["line"][CURRENT["category"]] += 1
                 if CURRENT["line"][CURRENT["category"]] >= CONFIG["rowlimit"]:
                     page_down()
                     draw_entries(force=True)
                     screen.refresh()
 
-<<<<<<< HEAD
-            elif keyCode in [KEY["up"], KEY["k"], KEY["w"]]:
-                resetListArrowKey()
-=======
-            elif keycode == KEY["up"] or keycode in KEY["k"] + KEY["w"]:
+            elif keycode in [KEY["up"], KEY["k"], KEY["w"]]:
                 reset_list_arrow_key()
->>>>>>> 9931cbd4cceb05cd7a11f20a8360f7e33227f3af
                 CURRENT["line"][CURRENT["category"]] -= 1
                 if CURRENT["line"][CURRENT["category"]] < 0:
                     page_up()
                     draw_entries(force=True)
                     screen.refresh()
 
-<<<<<<< HEAD
-            elif keyCode in [KEY["shiftUp"], KEY["W"], KEY["K"]]:
-                resetListArrowKey()
-=======
-            elif keycode == KEY["shiftUp"]:
+            elif keycode in [KEY["shiftUp"], KEY["W"], KEY["K"]]:
                 reset_list_arrow_key()
->>>>>>> 9931cbd4cceb05cd7a11f20a8360f7e33227f3af
                 CURRENT["line"][CURRENT["category"]] -= 10
                 if CURRENT["line"][CURRENT["category"]] < 0:
                     page_up()
                     draw_entries(force=True)
                     screen.refresh()
 
-<<<<<<< HEAD
-            elif keyCode in [KEY["shiftDown"], KEY["S"], KEY["J"]]:
-=======
-            elif keycode == KEY["shiftDown"]:
->>>>>>> 9931cbd4cceb05cd7a11f20a8360f7e33227f3af
+            elif keycode in [KEY["shiftDown"], KEY["S"], KEY["J"]]:
                 CURRENT["shift"] = 0
                 CURRENT["oline"] = CURRENT["line"][CURRENT["category"]]
                 CURRENT["line"][CURRENT["category"]] += 10
