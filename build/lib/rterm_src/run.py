@@ -431,11 +431,12 @@ def layout(screen):
             ):
                 screen.refresh()
 
-        if force and line_range[-1] + 1 < screen.height - 1:
-            for i in range(line_range[-1] + 2, screen.height):
-                screen.print_at(" " * screen.width, 0, i, colour=0, bg=0)
+        if len(line_range):
+            if force and line_range[-1] + 1 < screen.height - 1:
+                for i in range(line_range[-1] + 2, screen.height):
+                    screen.print_at(" " * screen.width, 0, i, colour=0, bg=0)
 
-            screen.refresh()
+                screen.refresh()
 
     def page_up():
         if CURRENT["page"][CURRENT["category"]] == 0:
@@ -778,7 +779,7 @@ def layout(screen):
                 draw_entries(clearline=True)
                 screen.refresh()
 
-            """  
+            """
             # for keycode debug
             screen.print_at('%s   ' % keycode, screen.width - 15, screen.height - 2, colour=0, bg=15)
             screen.refresh()
